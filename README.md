@@ -1,4 +1,4 @@
 # practice
 This repository is made for learning.
 <br>
-Author - Vishal Sai Vardhan
+Author - V L Vishal Sai Vardhan
