@@ -1,3 +1,3 @@
 # practice
-This repository is made for learning
+This repository is made for learning.
 Author - Vishal Sai Vardhan
