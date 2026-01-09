@@ -8,7 +8,7 @@ def getMinDiff(arr, k):
         minH = min(arr[0] + k, arr[i] - k)
         maxH = max(arr[i - 1] + k, arr[n - 1] - k)
         res = min(res, maxH - minH)
-        return res
+    return res
 if __name__ == "__main__":
     k = 2
     arr = [1, 5, 8, 10]
