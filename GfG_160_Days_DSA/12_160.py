@@ -1,18 +1,20 @@
-def maxProduct(arr):
-    n = len(arr)
-    maxProd = float('-inf')
-    leftToRight = 1
-    rightToLeft = 1
-    for i in range(n):
-        if leftToRight == 0:
-            leftToRight = 1
-        if rightToLeft == 0:
-            rightToLeft = 1
-            leftToRight *= arr[i]      
-        j = n - i - 1
-        rightToLeft *= arr[j]
-        maxProd = max(leftToRight, rightToLeft, maxProd)
-    return maxProd
-if __name__=="__main__":
-    arr = [-2, 6, -3, -10, 0, 2]
-    print(maxProduct(arr))
+def maxCircularSum(arr):
+    totalSum = 0    
+    currMaxSum = 0
+    currMinSum = 0
+    maxSum = arr[0]
+    minSum = arr[0]
+    for i in range(len(arr)):
+        currMaxSum = max(currMaxSum + arr[i], arr[i])
+        maxSum = max(maxSum, currMaxSum)
+        currMinSum = min(currMinSum + arr[i], arr[i])
+        minSum = min(minSum, currMinSum)
+        totalSum += arr[i]
+    normalSum = maxSum
+    circularSum = totalSum - minSum
+    if minSum == totalSum:
+        return normalSum
+    return max(normalSum, circularSum)
+if __name__ == "__main__":
+    arr = [8, -8, 9, -9, 10, -11, 12]
+    print(maxCircularSum(arr))
